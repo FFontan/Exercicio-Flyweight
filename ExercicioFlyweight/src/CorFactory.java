@@ -1,0 +1,17 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class CorFactory {
+    private Map<String, Cor> cores;
+
+    public CorFactory() {
+        cores = new HashMap<>();
+    }
+
+    public Cor getCor(String nome) {
+        if (!cores.containsKey(nome)) {
+            cores.put(nome, new Cor(nome));
+        }
+        return cores.get(nome);
+    }
+}
